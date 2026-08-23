@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Alerts | ThreatGraph</title>
+
+    <link rel="stylesheet"
+          href="/static/style.css">
+</head>
+
+<body>
+
+    <main class="alerts-main">
+
+        <header class="alerts-header">
+
+            <div>
+
+                <p class="subtitle">
+                    SECURITY MONITORING
+                </p>
+
+                <h1>Security Alerts</h1>
+
+                <p class="panel-text">
+                    Monitor and investigate active security alerts.
+                </p>
+
+            </div>
+
+            <button id="refresh-alerts-btn">
+                Refresh Alerts
+            </button>
+
+        </header>
+
+
+        <section id="alerts-container"
+                 class="alerts-container">
+
+            <p>Loading security alerts...</p>
+
+        </section>
+
+    </main>
+
+
+    <script src="/static/alert.js"></script>
+
+</body>
+
+</html>

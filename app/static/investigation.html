@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Investigation | ThreatGraph</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <div class="logo-icon">⬡</div>
+
+            <h2>ThreatGraph</h2>
+
+        </div>
+
+
+        <nav>
+
+            <a href="/" class="nav-item">
+
+                <span>▦</span>
+                Dashboard
+
+            </a>
+
+
+            <a href="/investigation"
+               class="nav-item active">
+
+                <span>◉</span>
+                Investigation
+
+            </a>
+
+
+            <a href="/graph-explorer"
+               class="nav-item">
+
+                <span>◈</span>
+                Graph Explorer
+
+            </a>
+
+
+            <a href="/alert"
+               class="nav-item">
+
+                <span>⚠</span>
+                Alerts
+
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <main class="main-content">
+
+        <header class="header">
+
+            <div>
+
+                <p class="subtitle">
+                    SECURITY INVESTIGATION
+                </p>
+
+                <h1>New Investigation</h1>
+
+            </div>
+
+        </header>
+
+
+        <section class="investigation-page">
+
+            <div class="panel">
+
+                <h2>Start Investigation</h2>
+
+                <p class="panel-text h-36px">
+
+                    Search for a user, device, IP address,
+                    attacker, or security indicator.
+
+                </p>
+
+                <div class="search-box ">
+
+                    <input
+                        type="text"
+                        id="investigation-input"
+                        placeholder="Enter IP, device, username..."
+                    >
+
+                   <button
+                    type="button"
+                    id="investigate-search-btn"
+                    onclick="goToResult()"
+                >
+    Investigate
+</button>
+
+                </div>
+
+
+                <div id="investigation-result">
+                    Search for an entity to begin the investigation.
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+<script>
+    function goToResult() {
+
+        const searchValue =
+            document.getElementById("investigation-input").value.trim();
+
+        if (searchValue === "") {
+            alert("Please enter a device, user, or IP address.");
+            return;
+        }
+
+        window.location.href =
+            "/investigation-result?search=" +
+            encodeURIComponent(searchValue);
+    }
+</script>
+
+    <script src="/static/script.js"></script>
+
+</body>
+
+</html>

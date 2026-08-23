@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Graph Explorer | ThreatGraph</title>
+
+    <link rel="stylesheet"
+          href="/static/style.css">
+</head>
+
+<body>
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <div class="logo-icon">⬡</div>
+
+            <h2>ThreatGraph</h2>
+
+        </div>
+
+        <nav>
+
+            <a href="/"
+               class="nav-item">
+
+                <span>▦</span>
+                Dashboard
+
+            </a>
+
+            <a href="/investigation"
+               class="nav-item">
+
+                <span>◉</span>
+                Investigation
+
+            </a>
+
+            <a href="/graph-explorer"
+               class="nav-item active">
+
+                <span>◈</span>
+                Graph Explorer
+
+            </a>
+
+            <a href="/alert"
+               class="nav-item active">
+
+                <span>⚠</span>
+                Alerts
+
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <main class="main-content">
+
+        <header class="header">
+
+            <div>
+
+                <p class="subtitle">
+                    THREAT RELATIONSHIP ANALYSIS
+                </p>
+
+                <h1>Graph Explorer</h1>
+
+            </div>
+
+        </header>
+
+
+        <section class="graph-explorer-page">
+
+            <div class="panel">
+
+                <div class="graph-header">
+
+                    <div>
+
+                        <h2>Threat Intelligence Graph</h2>
+
+                        <p class="panel-text">
+
+                            Explore relationships between users,
+                            devices, alerts, indicators, and attackers.
+
+                        </p>
+
+                    </div>
+
+                    <button id="reload-graph-btn">
+
+                        Refresh Graph
+
+                    </button>
+
+                </div>
+
+
+                <div id="graph-explorer-container"
+                     class="graph-explorer-container">
+
+                    <p>Loading threat graph...</p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="/static/graph-explore.js"></script>
+
+</body>
+
+</html>

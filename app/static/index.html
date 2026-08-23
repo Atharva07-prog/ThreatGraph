@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ThreatGraph | Graph-Based Threat Intelligence</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+    </head>
+<body>
+
+    <!-- Sidebar-->
+     <aside class="sidebar">
+
+        <div class="logo">
+            <div class="logo-icon">⬡</div>
+            <h2>ThreatGraph</h2>
+        </div>
+
+        <nav>
+            <a href="#" class="nav-item active">
+                <span>▦</span>
+                Dashboard
+            </a>
+
+            <a href="/investigation" class="nav-item">
+                <span>◉</span>
+                Investigation
+            </a>
+            <a href="/graph-explorer" class="nav-item"
+            onclick="console.log('Graph Explore clicked')"
+                <span>◈</span>
+                Graph Explorer
+            </a>
+
+            <a href="/alert" class="nav-item">
+                <span>⚠</span>
+                Alerts
+            </a>
+        </nav>
+
+        <div class="database-status">
+           
+            <span class="status-dot"></span>
+
+            <div>
+                <p>database</p>
+                <strong id="db-status">Connected</strong>
+            </div>
+        </div>    
+     </aside>
+
+ <!-- Main Content -->
+    <main class="main-content">
+        
+        <!-- Header -->
+         <header class="header">
+            
+            <div>
+                <p class="subtitle">Security Investigation Platform</p>
+
+                <h1>Threat Intelligence Dashboard</h1>
+                </div>
+
+               <a href="/investigation" class="investigate-btn">
+    + New Investigation
+</a>
+         </header>
+
+        <!-- Statistics Cards -->
+<section class="stats-container">
+
+    <div class="stat-card">
+        <p>Total Entities</p>
+        <h2 id="total-entities">0</h2>
+        <span>Nodes in graph</span>
+    </div>
+
+    <div class="stat-card">
+        <p>Devices</p>
+        <h2 id="device-count">0</h2>
+        <span>Monitored Systems</span>
+    </div>
+
+    <div class="stat-card danger">
+        <p>Active Alerts</p>
+        <h2 id="alert-count">0</h2>
+        <span>Requires investigation</span>
+    </div>
+
+    <div class="stat-card">
+        <p>Relationships</p>
+        <h2 id="relationship-count">0</h2>
+        <span>Graph connections</span>
+    </div>
+
+</section>
+
+        <!-- Graph Section-->    
+         <section class="graph-section">
+
+            <div>
+                <p class="subtitle">LIVE GRAPH</p>
+                <h2>Threat Relationships MAP</h2>
+            </div>
+
+            <button id="refresh-btn">   ↻ Refresh </button>
+
+        </div>
+        
+        <div class="graph-container">
+
+        <div class="graph-placeholder">
+
+        <div class="graph-node user">
+             👤
+             <span>User</span>
+        </div>
+
+        <div class="graph-node device">
+             💻
+             <span>Device</span>
+        </div>
+
+        <div class="connection-line line-two"></div>
+
+        <div class="graph-node ip">
+             🌐
+             <span>IP Address</span>
+        </div>
+        
+        <div class="connection-line line-three"></div>
+        
+        <div class="graph-node alert-node">
+                ⚠
+                <span>Alert</span>
+        </div>
+         </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Bottom Section -->
+        <section class="bottom-grid">
+
+            <div class="panel">
+
+                <div class="section-header">
+                    <h2>Recent Alerts</h2>
+                </div>
+
+                <div id="alerts-list">
+
+                    <div class="alert-item">
+
+                        <div class="alert-icon">⚠</div>
+
+                        <div>
+                            <strong>Suspicious Login Activity</strong>
+                            <p>Unknown IP detected</p>
+                        </div>
+
+                        <span class="high">HIGH</span>
+
+                    </div>
+
+
+                    <div class="alert-item">
+
+                        <div class="alert-icon">!</div>
+
+                        <div>
+                            <strong>Multiple Failed Logins</strong>
+                            <p>Possible brute force attempt</p>
+                        </div>
+
+                        <span class="medium">MEDIUM</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="panel">
+
+                <div class="section-header">
+                    <h2>Quick Investigation</h2>
+                </div>
+
+                <p class="panel-text">
+                    Search for a user, device, IP address, or alert.
+                </p>
+
+                <div class="search-box">
+
+                    <input
+                        type="text"
+                        id="search-input"
+                        placeholder="Enter IP, device, or username..."
+                    >
+
+                    <button id="search-btn">
+                        Search
+                    </button>
+
+                </div>
+
+                <div id="search-result"></div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="/static/script.js"></script>
+
+</body>
+</html>
+
+
